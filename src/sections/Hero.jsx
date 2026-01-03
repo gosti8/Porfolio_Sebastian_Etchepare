@@ -1,20 +1,22 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 import styles from './Hero.module.css';
+import profileImg from '../assets/profile.jpg';
 
 const Hero = () => {
     return (
         <section className={styles.hero}>
             <div className="container">
-                <div className={styles.content}>
+                <div className={styles.grid}>
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        className={styles.content}
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                     >
                         <span className={styles.greeting}>Hola, soy</span>
                         <h1 className={styles.title}>
-                            Sebastián <span className="gradient-text">Etchepare</span> {/* Name corrected per request */}
+                            Sebastián <span className="gradient-text">Etchepare</span>
                         </h1>
                         <h2 className={styles.subtitle}>
                             DevOps | SysAdmin | Freelancer | <br />
@@ -34,10 +36,21 @@ const Hero = () => {
                             </a>
                         </div>
                     </motion.div>
+
+                    <motion.div
+                        className={styles.imageWrapper}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                        <div className={styles.profileFrame}>
+                            <img src={profileImg} alt="Sebastián Etchepare" className={styles.profileImage} />
+                        </div>
+                    </motion.div>
                 </div>
             </div>
 
-            {/* Background decorations can go here */}
+            {/* Background decorations */}
             <div className={styles.glow} />
         </section>
     );
