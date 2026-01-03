@@ -16,12 +16,12 @@ const Skills = () => {
         {
             title: 'Infraestructura & DevOps',
             icon: <Network size={32} />,
-            skills: ['VMware vSphere', 'Proxmox', 'Docker', 'Zabbix', 'Cloudflare Zero Trust', 'PfSense', 'Ubiquiti UniFi', 'NetBox']
+            skills: ['VMware vSphere', 'Proxmox', 'Docker', 'Zabbix', 'Cloudflare Zero Trust', 'PfSense', 'Cisco Switching', 'NetBox']
         },
         {
-            title: 'Backend & Sistemas',
+            title: 'Certificaciones & Seguridad',
             icon: <Server size={32} />,
-            skills: ['Java', 'Spring Boot', 'MySQL', 'Linux Administration', 'Shell Scripting', 'Nginx']
+            skills: ['Cisco Certified Network Associate', 'Cybersecurity Strategy Certification', 'Linux Administration', 'Shell Scripting', 'Nginx']
         },
         {
             title: 'Desarrollo Full Stack',
