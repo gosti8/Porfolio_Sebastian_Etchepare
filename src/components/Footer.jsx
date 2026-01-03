@@ -29,7 +29,7 @@ const Footer = () => {
                 </div>
 
                 <p style={{ color: '#52525b', fontSize: '0.9rem' }}>
-                    © {new Date().getFullYear()} Sebastián Méndez. Todos los derechos reservados.
+                    © {new Date().getFullYear()} Sebastián Etchepare. Todos los derechos reservados.
                 </p>
             </div>
         </footer>
