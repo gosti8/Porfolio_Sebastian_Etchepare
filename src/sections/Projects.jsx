@@ -52,9 +52,7 @@ const Projects = () => {
                             <div className={styles.imageContainer}>
                                 <img src={project.image} alt={project.title} className={styles.image} />
                                 <div className={styles.overlay}>
-                                    {project.liveLink && (
-                                        <a href={project.liveLink} className={styles.linkBtn}><ExternalLink size={20} /> Demo</a>
-                                    )}
+                                    {/* Images only, no demo link */}
                                 </div>
                             </div>
 

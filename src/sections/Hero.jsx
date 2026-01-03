@@ -17,12 +17,11 @@ const Hero = () => {
                             Sebastián <span className="gradient-text">Etchepare</span> {/* Name corrected per request */}
                         </h1>
                         <h2 className={styles.subtitle}>
-                            Licenciado en Sistemas & <br />
-                            Full Stack Developer
+                            DevOps | SysAdmin | Freelancer | <br />
+                            Desarrollador Full Stack
                         </h2>
 
                         <p className={styles.description}>
-                            Especialista en infraestructura IT, virtualización y desarrollo de soluciones modernas.
                             Transformo ideas complejas en sistemas eficientes y escalables.
                         </p>
 

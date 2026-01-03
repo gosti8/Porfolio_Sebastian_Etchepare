@@ -24,7 +24,7 @@ const Skills = () => {
             skills: ['Java', 'Spring Boot', 'MySQL', 'Linux Administration', 'Shell Scripting', 'Nginx']
         },
         {
-            title: 'Frontend Moderno',
+            title: 'Desarrollo Full Stack',
             icon: <Code size={32} />,
             skills: ['React', 'Vite', 'Javascript (ES6+)', 'CSS Modules', 'Framer Motion', 'Responsive Design']
         }
