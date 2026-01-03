@@ -18,10 +18,17 @@ const Hero = () => {
                         <h1 className={styles.title}>
                             Sebastián <span className="gradient-text">Etchepare</span>
                         </h1>
-                        <h2 className={styles.subtitle}>
+
+                        <div className={styles.mainTitleWrapper}>
+                            <h2 className={styles.mainTitle}>
+                                Licenciado en Sistemas
+                            </h2>
+                        </div>
+
+                        <h3 className={styles.subtitle}>
                             DevOps | SysAdmin | Freelancer | <br />
                             Desarrollador Full Stack
-                        </h2>
+                        </h3>
 
                         <p className={styles.description}>
                             Transformo ideas complejas en sistemas eficientes y escalables.
