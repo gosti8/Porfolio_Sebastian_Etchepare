@@ -14,7 +14,7 @@ const Hero = () => {
                     >
                         <span className={styles.greeting}>Hola, soy</span>
                         <h1 className={styles.title}>
-                            Sebastián <span className="gradient-text">Méndez</span> {/* Placeholder Lastname */}
+                            Sebastián <span className="gradient-text">Etchepare</span> {/* Name corrected per request */}
                         </h1>
                         <h2 className={styles.subtitle}>
                             Licenciado en Sistemas & <br />

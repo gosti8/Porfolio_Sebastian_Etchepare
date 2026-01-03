@@ -26,7 +26,7 @@ const Navbar = () => {
             <div className="container">
                 <div className={styles.navContent}>
                     <div className={styles.logo}>
-                        Seba<span className="gradient-text">stian</span>
+                        Sebastián <span className="gradient-text">Etchepare</span>
                     </div>
 
                     <div className={styles.desktopMenu}>
