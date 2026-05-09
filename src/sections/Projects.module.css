@@ -1,6 +1,6 @@
 .projects {
     padding: var(--spacing-xl) 0;
-    background-color: #080808;
+    background-color: var(--bg-dark);
 }
 
 .header {
@@ -42,13 +42,13 @@
 .image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     background: #121212;
     transition: transform 0.5s;
 }
 
 .card:hover .image {
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
 .overlay {
@@ -57,11 +57,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -72,12 +71,12 @@
 
 .zoomIcon {
     color: white;
-    opacity: 0;
-    transition: opacity 0.3s;
+    transform: scale(0.8);
+    transition: transform 0.3s;
 }
 
 .card:hover .zoomIcon {
-    opacity: 1;
+    transform: scale(1);
 }
 
 .censorBar {
@@ -117,17 +116,18 @@
 
 .tag {
     background: rgba(255, 255, 255, 0.05);
-    color: var(--primary);
+    color: var(--primary-light);
     padding: 0.2rem 0.8rem;
     border-radius: 4px;
     font-size: 0.8rem;
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(79, 70, 229, 0.2);
 }
 
 .title {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
     color: var(--text-main);
+    font-weight: 600;
 }
 
 .description {
@@ -136,14 +136,15 @@
     line-height: 1.6;
 }
 
-/* Lightbox Styling */
+/* Lightbox Avanzado */
 .lightbox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
     z-index: 2000;
     display: flex;
     align-items: center;
@@ -152,56 +153,291 @@
 }
 
 .lightboxContent {
-    background: transparent;
-    max-width: 90vw;
-    max-height: 90vh;
-    width: auto;
-    border-radius: 0;
-    overflow: visible;
+    background: var(--bg-card);
+    width: 95vw;
+    max-width: 1400px;
+    height: 90vh;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
-    box-shadow: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lightboxImageWrapper {
-    position: relative;
-    max-height: 90vh;
-    max-width: 90vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lightboxImage {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
-}
-
-.lightboxDetails {
-    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .closeBtn {
     position: absolute;
-    top: -40px;
-    right: -40px;
+    top: 1.5rem;
+    right: 1.5rem;
     background: rgba(255, 255, 255, 0.1);
     border: none;
     color: white;
-    padding: 0.8rem;
+    padding: 0.5rem;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 2001;
+    z-index: 10;
     transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .closeBtn:hover {
     background: rgba(255, 255, 255, 0.3);
+}
+
+.modalGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    height: 100%;
+    width: 100%;
+}
+
+/* Modal Media Section */
+.mediaSection {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-right: 1px solid var(--border-color);
+}
+
+.mainMedia {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.mediaContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mediaItem {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.navBtnPrev, .navBtnNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 5;
+}
+
+.navBtnPrev { left: 1rem; }
+.navBtnNext { right: 1rem; }
+
+.navBtnPrev:hover, .navBtnNext:hover {
+    background: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.mediaThumbnails {
+    height: 80px;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.thumbBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.1);
+    border: 2px solid transparent;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.thumbBtn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.thumbActive {
+    border-color: var(--primary);
+    background: var(--primary-glow);
+}
+
+/* Modal Details Section */
+.detailsSection {
+    padding: 3rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.modalTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.modalTag {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--primary-light);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.tabsContainer {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.tabBtn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+}
+
+.tabBtn:hover {
+    color: var(--text-main);
+}
+
+.tabActive {
+    color: var(--primary-light);
+}
+
+.tabActive::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-light);
+    border-radius: 2px 2px 0 0;
+}
+
+.tabContent {
+    flex: 1;
+}
+
+.htmlContent {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.htmlContent h3 {
+    color: var(--text-main);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.htmlContent h3:first-child {
+    margin-top: 0;
+}
+
+.htmlContent p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.htmlContent ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.htmlContent li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.htmlContent li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+.htmlContent strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .modalGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50vh 1fr;
+    }
+
+    .mediaSection {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+
+@media (max-width: 768px) {
+    .lightbox {
+        padding: 0;
+    }
+    
+    .lightboxContent {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .detailsSection {
+        padding: 1.5rem;
+    }
+    
+    .modalTitle {
+        font-size: 1.5rem;
+    }
 }

@@ -1,49 +1,31 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ZoomIn } from 'lucide-react';
+import { X, ZoomIn, Play, Image as ImageIcon, ChevronLeft, ChevronRight, CheckCircle, Code } from 'lucide-react';
 import styles from './Projects.module.css';
-import dashboard1 from '../assets/dashboard-1.png';
-import dashboard2 from '../assets/dashboard-2.png';
-import panelCentral from '../assets/panel-central.png';
-import vpsHostinger from '../assets/vps-hostinger.png';
+import { projectsData } from '../data/projectsData';
 
 const Projects = () => {
-    const [selectedId, setSelectedId] = useState(null);
+    const [selectedProject, setSelectedProject] = useState(null);
+    const [activeTab, setActiveTab] = useState('functional'); // 'functional' | 'technical'
+    const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
 
-    const projects = [
-        {
-            id: 1,
-            title: 'Panel Central - Gestión Unificada',
-            description: 'Portal administrativo centralizado protegido con Cloudflare Zero Trust para acceso seguro. Punto de entrada para los módulos de RRHH, Finanzas y Cosechas.',
-            tags: ['Cloudflare Zero Trust', 'Docker', 'React', 'Security'],
-            image: panelCentral,
-            censor: true // Flag to trigger CSS masking
-        },
-        {
-            id: 2,
-            title: 'Infraestructura VPS Hostinger',
-            description: 'Entorno de despliegue productivo. Servidor VPS KVM administrando múltiples contenedores Docker y servicios críticos con alta disponibilidad.',
-            tags: ['Linux KVM', 'Debian 12', 'Docker Compose', 'Nginx Proxy'],
-            image: vpsHostinger,
-            censor: false
-        },
-        {
-            id: 3,
-            title: 'ERP Agropecuario - Gestión Integral',
-            description: 'Plataforma completa para la administración de personal, cosechas y logística en tiempo real. Incluye paneles exclusivos para administradores y encargados de campo.',
-            tags: ['React', 'Spring Boot', 'Docker', 'MySQL'],
-            image: dashboard1,
-            censor: false
-        },
-        {
-            id: 4,
-            title: 'Módulo de Gestión de Usuarios y Quintas',
-            description: 'Sistema administrativo para el alta, baja y modificación de entidades críticas del negocio (Quintas, Colectivos, Usuarios). Autenticación robusta y roles.',
-            tags: ['Java', 'Security', 'Vite', 'Rest API'],
-            image: dashboard2,
-            censor: false
+    const openModal = (project) => {
+        setSelectedProject(project);
+        setActiveTab('functional');
+        setCurrentMediaIndex(0);
+    };
+
+    const nextMedia = () => {
+        if (selectedProject) {
+            setCurrentMediaIndex((prev) => (prev + 1) % selectedProject.media.length);
         }
-    ];
+    };
+
+    const prevMedia = () => {
+        if (selectedProject) {
+            setCurrentMediaIndex((prev) => (prev - 1 + selectedProject.media.length) % selectedProject.media.length);
+        }
+    };
 
     return (
         <section id="projects" className={styles.projects}>
@@ -54,85 +36,172 @@ const Projects = () => {
                     viewport={{ once: true }}
                     className={styles.header}
                 >
-                    <h2 className="section-title">Proyectos e <span className="gradient-text">Infraestructura</span></h2>
-                    <p className={styles.subtitle}>Soluciones reales y arquitectura desplegada en producción.</p>
+                    <h2 className="section-title">Sistemas e <span className="gradient-text">Infraestructura</span></h2>
+                    <p className={styles.subtitle}>Soluciones reales y arquitectura desplegada en producción en los últimos 5 meses.</p>
                 </motion.div>
 
                 <div className={styles.grid}>
-                    {projects.map((project, index) => (
+                    {projectsData.map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={styles.card}
+                            className={`${styles.card} glass`}
                             layoutId={`card-${project.id}`}
-                            onClick={() => setSelectedId(project.id)}
+                            onClick={() => openModal(project)}
                         >
                             <div className={styles.imageContainer}>
-                                <motion.img
-                                    src={project.image}
+                                <img
+                                    src={project.thumbnail}
                                     alt={project.title}
                                     className={styles.image}
                                 />
-                                {/* CSS Masking for "Service Company" if flagged */}
                                 {project.censor && <div className={styles.censorBar} />}
 
                                 <div className={styles.overlay}>
-                                    <ZoomIn className={styles.zoomIcon} size={24} />
+                                    <ZoomIn className={styles.zoomIcon} size={32} />
                                 </div>
                             </div>
 
                             <div className={styles.content}>
                                 <div className={styles.tags}>
-                                    {project.tags.map(tag => (
+                                    {project.tags.slice(0, 3).map(tag => (
                                         <span key={tag} className={styles.tag}>{tag}</span>
                                     ))}
+                                    {project.tags.length > 3 && <span className={styles.tag}>+{project.tags.length - 3}</span>}
                                 </div>
 
                                 <h3 className={styles.title}>{project.title}</h3>
-                                <p className={styles.description}>{project.description}</p>
+                                <p className={styles.description}>{project.shortDescription}</p>
                             </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
 
-            {/* Lightbox / Modal */}
+            {/* Lightbox / Modal Avanzado */}
             <AnimatePresence>
-                {selectedId && (
+                {selectedProject && (
                     <motion.div
                         className={styles.lightbox}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={() => setSelectedId(null)}
+                        onClick={() => setSelectedProject(null)}
                     >
                         <motion.div
                             className={styles.lightboxContent}
-                            layoutId={`card-${selectedId}`}
+                            layoutId={`card-${selectedProject.id}`}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <button className={styles.closeBtn} onClick={() => setSelectedId(null)}>
+                            <button className={styles.closeBtn} onClick={() => setSelectedProject(null)}>
                                 <X size={24} />
                             </button>
 
-                            {(() => {
-                                const project = projects.find(p => p.id === selectedId);
-                                return (
-                                    <>
-                                        <div className={styles.lightboxImageWrapper}>
-                                            <img src={project.image} alt={project.title} className={styles.lightboxImage} />
-                                            {project.censor && <div className={styles.censorBarLarge} />}
-                                        </div>
-                                        <div className={styles.lightboxDetails}>
-                                            <h3>{project.title}</h3>
-                                            <p>{project.description}</p>
-                                        </div>
-                                    </>
-                                );
-                            })()}
+                            <div className={styles.modalGrid}>
+                                {/* Lado Izquierdo: Galería Multimedia */}
+                                <div className={styles.mediaSection}>
+                                    <div className={styles.mainMedia}>
+                                        {selectedProject.censor && <div className={styles.censorBarLarge} />}
+                                        <AnimatePresence mode='wait'>
+                                            <motion.div
+                                                key={currentMediaIndex}
+                                                initial={{ opacity: 0, scale: 0.95 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                exit={{ opacity: 0, scale: 0.95 }}
+                                                transition={{ duration: 0.2 }}
+                                                className={styles.mediaContainer}
+                                            >
+                                                {selectedProject.media[currentMediaIndex].type === 'video' ? (
+                                                    <video
+                                                        src={selectedProject.media[currentMediaIndex].url}
+                                                        controls
+                                                        autoPlay
+                                                        className={styles.mediaItem}
+                                                    />
+                                                ) : (
+                                                    <img
+                                                        src={selectedProject.media[currentMediaIndex].url}
+                                                        alt="Proyecto screenshot"
+                                                        className={styles.mediaItem}
+                                                    />
+                                                )}
+                                            </motion.div>
+                                        </AnimatePresence>
+
+                                        {selectedProject.media.length > 1 && (
+                                            <>
+                                                <button className={styles.navBtnPrev} onClick={prevMedia}><ChevronLeft /></button>
+                                                <button className={styles.navBtnNext} onClick={nextMedia}><ChevronRight /></button>
+                                            </>
+                                        )}
+                                    </div>
+                                    
+                                    <div className={styles.mediaThumbnails}>
+                                        {selectedProject.media.map((media, idx) => (
+                                            <button 
+                                                key={idx} 
+                                                className={`${styles.thumbBtn} ${idx === currentMediaIndex ? styles.thumbActive : ''}`}
+                                                onClick={() => setCurrentMediaIndex(idx)}
+                                            >
+                                                {media.type === 'video' ? <Play size={16} /> : <ImageIcon size={16} />}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Lado Derecho: Detalles */}
+                                <div className={styles.detailsSection}>
+                                    <h2 className={styles.modalTitle}>{selectedProject.title}</h2>
+                                    
+                                    <div className={styles.modalTags}>
+                                        {selectedProject.tags.map(tag => (
+                                            <span key={tag} className={styles.modalTag}>{tag}</span>
+                                        ))}
+                                    </div>
+
+                                    <div className={styles.tabsContainer}>
+                                        <button 
+                                            className={`${styles.tabBtn} ${activeTab === 'functional' ? styles.tabActive : ''}`}
+                                            onClick={() => setActiveTab('functional')}
+                                        >
+                                            <CheckCircle size={18} /> Visión Negocio
+                                        </button>
+                                        <button 
+                                            className={`${styles.tabBtn} ${activeTab === 'technical' ? styles.tabActive : ''}`}
+                                            onClick={() => setActiveTab('technical')}
+                                        >
+                                            <Code size={18} /> Visión Técnica
+                                        </button>
+                                    </div>
+
+                                    <div className={styles.tabContent}>
+                                        <AnimatePresence mode='wait'>
+                                            {activeTab === 'functional' ? (
+                                                <motion.div
+                                                    key="functional"
+                                                    initial={{ opacity: 0, x: -10 }}
+                                                    animate={{ opacity: 1, x: 0 }}
+                                                    exit={{ opacity: 0, x: 10 }}
+                                                    dangerouslySetInnerHTML={{ __html: selectedProject.functionalSummary }}
+                                                    className={styles.htmlContent}
+                                                />
+                                            ) : (
+                                                <motion.div
+                                                    key="technical"
+                                                    initial={{ opacity: 0, x: -10 }}
+                                                    animate={{ opacity: 1, x: 0 }}
+                                                    exit={{ opacity: 0, x: 10 }}
+                                                    dangerouslySetInnerHTML={{ __html: selectedProject.technicalSummary }}
+                                                    className={styles.htmlContent}
+                                                />
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                </div>
+                            </div>
                         </motion.div>
                     </motion.div>
                 )}

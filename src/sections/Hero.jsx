@@ -26,12 +26,12 @@ const Hero = () => {
                         </div>
 
                         <h3 className={styles.subtitle}>
-                            DevOps | SysAdmin | Freelancer | <br />
-                            Desarrollador Full Stack
+                            Arquitecto de Infraestructura | Creador de Sistemas Escalables <br />
+                            Especialista Full Stack
                         </h3>
 
                         <p className={styles.description}>
-                            Transformo ideas complejas en sistemas eficientes y escalables.
+                            Construyo ecosistemas de software robustos desde cero, diseñando tanto el motor (Backend) y la fachada (Frontend), como la infraestructura de red y seguridad que lo sostiene en producción.
                         </p>
 
                         <div className={styles.actions}>
