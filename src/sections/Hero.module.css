@@ -48,7 +48,7 @@
 .mainTitle {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     font-weight: 600;
-    background: linear-gradient(90deg, var(--primary-light), var(--primary-color));
+    background: linear-gradient(90deg, var(--primary-light), var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
