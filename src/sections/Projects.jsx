@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ZoomIn, Play, Image as ImageIcon, ChevronLeft, ChevronRight, CheckCircle, Code } from 'lucide-react';
+import { X, ZoomIn, Play, Image as ImageIcon, ChevronLeft, ChevronRight, CheckCircle, Code, Info, Maximize } from 'lucide-react';
 import styles from './Projects.module.css';
 import { projectsData } from '../data/projectsData';
 
@@ -8,11 +8,20 @@ const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [activeTab, setActiveTab] = useState('functional'); // 'functional' | 'technical'
     const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+    const [showDetails, setShowDetails] = useState(true);
 
     const openModal = (project) => {
         setSelectedProject(project);
         setActiveTab('functional');
         setCurrentMediaIndex(0);
+        setShowDetails(true);
+        // Prevent scrolling on body when modal is open
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        setSelectedProject(null);
+        document.body.style.overflow = 'auto';
     };
 
     const nextMedia = () => {
@@ -81,7 +90,7 @@ const Projects = () => {
                 </div>
             </div>
 
-            {/* Lightbox / Modal Avanzado */}
+            {/* Lightbox / Modal Avanzado FULLSCREEN */}
             <AnimatePresence>
                 {selectedProject && (
                     <motion.div
@@ -89,19 +98,28 @@ const Projects = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={() => setSelectedProject(null)}
+                        onClick={closeModal}
                     >
                         <motion.div
                             className={styles.lightboxContent}
                             layoutId={`card-${selectedProject.id}`}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <button className={styles.closeBtn} onClick={() => setSelectedProject(null)}>
-                                <X size={24} />
+                            <button className={styles.closeBtn} onClick={closeModal} title="Cerrar">
+                                <X size={28} />
+                            </button>
+
+                            <button 
+                                className={styles.toggleDetailsBtn} 
+                                onClick={() => setShowDetails(!showDetails)}
+                                title={showDetails ? "Ocultar Detalles" : "Ver Detalles"}
+                            >
+                                {showDetails ? <Maximize size={20} /> : <Info size={20} />}
+                                {showDetails ? "Modo Inmersivo" : "Ver Info"}
                             </button>
 
                             <div className={styles.modalGrid}>
-                                {/* Lado Izquierdo: Galería Multimedia */}
+                                {/* Lado Multimedia (100% Pantalla) */}
                                 <div className={styles.mediaSection}>
                                     <div className={styles.mainMedia}>
                                         {selectedProject.censor && <div className={styles.censorBarLarge} />}
@@ -133,27 +151,27 @@ const Projects = () => {
 
                                         {selectedProject.media.length > 1 && (
                                             <>
-                                                <button className={styles.navBtnPrev} onClick={prevMedia}><ChevronLeft /></button>
-                                                <button className={styles.navBtnNext} onClick={nextMedia}><ChevronRight /></button>
+                                                <button className={styles.navBtnPrev} onClick={prevMedia}><ChevronLeft size={28} /></button>
+                                                <button className={styles.navBtnNext} onClick={nextMedia}><ChevronRight size={28} /></button>
                                             </>
                                         )}
                                     </div>
                                     
-                                    <div className={styles.mediaThumbnails}>
+                                    <div className={styles.mediaThumbnails} style={{ marginBottom: showDetails && window.innerWidth <= 768 ? '60vh' : '0' }}>
                                         {selectedProject.media.map((media, idx) => (
                                             <button 
                                                 key={idx} 
                                                 className={`${styles.thumbBtn} ${idx === currentMediaIndex ? styles.thumbActive : ''}`}
                                                 onClick={() => setCurrentMediaIndex(idx)}
                                             >
-                                                {media.type === 'video' ? <Play size={16} /> : <ImageIcon size={16} />}
+                                                {media.type === 'video' ? <Play size={20} /> : <ImageIcon size={20} />}
                                             </button>
                                         ))}
                                     </div>
                                 </div>
 
-                                {/* Lado Derecho: Detalles */}
-                                <div className={styles.detailsSection}>
+                                {/* Sidebar de Detalles (Flotante y Ocultable) */}
+                                <div className={`${styles.detailsSection} ${!showDetails ? styles.detailsHidden : ''}`}>
                                     <h2 className={styles.modalTitle}>{selectedProject.title}</h2>
                                     
                                     <div className={styles.modalTags}>
