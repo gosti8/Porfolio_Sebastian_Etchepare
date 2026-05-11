@@ -26,12 +26,12 @@ const Hero = () => {
                         </div>
 
                         <h3 className={styles.subtitle}>
-                            Arquitecto de Infraestructura | Creador de Sistemas Escalables <br />
-                            Especialista Full Stack
+                            Desarrollo a Medida | Administrador de Sistemas <br />
+                            Arquitectura e Infraestructura Cloud
                         </h3>
 
                         <p className={styles.description}>
-                            Construyo ecosistemas de software robustos desde cero, diseñando tanto el motor (Backend) y la fachada (Frontend), como la infraestructura de red y seguridad que lo sostiene en producción.
+                            Como Licenciado en Sistemas, construyo soluciones de software personalizadas desde cero y administro la infraestructura de servidores y redes para garantizar que tu negocio escale de forma segura y eficiente.
                         </p>
 
                         <div className={styles.actions}>

@@ -4,7 +4,7 @@ export const projectsData = [
     title: 'Infraestructura Cloud & Zero Trust - ERP Central',
     shortDescription: 'Diseño y despliegue de arquitectura productiva en VPS con alta disponibilidad, protegida bajo políticas Zero Trust.',
     tags: ['Cloudflare Zero Trust', 'Docker Compose', 'Linux KVM', 'Nginx Proxy', 'Seguridad Redes'],
-    censor: true,
+    censor: false,
     thumbnail: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 211620.png',
     media: [
       { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 211620.png' },

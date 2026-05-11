@@ -8,7 +8,7 @@ const Experience = () => {
             id: 1,
             role: 'Desarrollador Full Stack & Arquitectura',
             company: 'Empresa Agropecuaria (ERP)',
-            period: 'Nov 2024 - Presente',
+            period: 'Nov 2025 - Presente',
             description: 'Lideré el desarrollo integral de un ERP para la gestión de cosechas y logística.',
             achievements: [
                 'Desarrollo Frontend en React y Backend en Spring Boot.',
@@ -21,7 +21,7 @@ const Experience = () => {
             id: 2,
             role: 'Infraestructura y Redes',
             company: 'Municipalidad de Concordia',
-            period: 'Ago 2024 - Dic 2024',
+            period: 'Ago 2025 - Dic 2025',
             description: 'Gestión operativa, monitoreo y modernización de la red municipal.',
             achievements: [
                 'Administración de virtualización con VMware y Proxmox.',
