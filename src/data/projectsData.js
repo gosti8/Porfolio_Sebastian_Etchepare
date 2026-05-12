@@ -7,13 +7,13 @@ export const projectsData = [
     censor: false,
     thumbnail: '/projects/thumbnails/thumbnail_erp.png',
     media: [
+      { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 211620.png' },
       { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 205959.png' },
       { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 210050.png' },
       { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 210122.png' },
       { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 210343.png' },
       { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 21044a0.png' },
-      { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 210719.png' },
-      { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 211620.png' }
+      { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 210719.png' }
     ],
     functionalSummary: `
       <h3>Visión de Negocio (Panel Central)</h3>
