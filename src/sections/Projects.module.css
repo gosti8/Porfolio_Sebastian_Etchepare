@@ -287,11 +287,11 @@
     background: var(--primary-glow);
 }
 
-/* Toggle Details Button */
-.toggleDetailsBtn {
+/* Botón para mostrar detalles cuando están ocultos */
+.showDetailsBtn {
     position: absolute;
     bottom: 2rem;
-    right: 2rem;
+    left: 2rem;
     z-index: 9000;
     background: rgba(18, 18, 18, 0.8);
     backdrop-filter: blur(10px);
@@ -307,8 +307,32 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.toggleDetailsBtn:hover {
-    background: rgba(255,255,255,0.1);
+.showDetailsBtn:hover {
+    background: var(--primary);
+    transform: scale(1.05);
+}
+
+/* Botón para ocultar detalles dentro de la barra lateral */
+.hideDetailsBtn {
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    padding: 0.8rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.hideDetailsBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Modal Details Section - Floating Sidebar */

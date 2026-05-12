@@ -109,14 +109,17 @@ const Projects = () => {
                                 <X size={28} />
                             </button>
 
-                            <button 
-                                className={styles.toggleDetailsBtn} 
-                                onClick={() => setShowDetails(!showDetails)}
-                                title={showDetails ? "Ocultar Detalles" : "Ver Detalles"}
-                            >
-                                {showDetails ? <Maximize size={20} /> : <Info size={20} />}
-                                {showDetails ? "Modo Inmersivo" : "Ver Info"}
-                            </button>
+                            {/* Botón flotante para mostrar descripción cuando está oculta */}
+                            {!showDetails && (
+                                <button 
+                                    className={styles.showDetailsBtn} 
+                                    onClick={() => setShowDetails(true)}
+                                    title="Ver Descripción"
+                                >
+                                    <Info size={20} />
+                                    <span>Ver Detalles</span>
+                                </button>
+                            )}
 
                             <div className={styles.modalGrid}>
                                 {/* Lado Multimedia (100% Pantalla) */}
@@ -218,6 +221,15 @@ const Projects = () => {
                                             )}
                                         </AnimatePresence>
                                     </div>
+
+                                    {/* Botón para ocultar descripción dentro de la barra lateral */}
+                                    <button 
+                                        className={styles.hideDetailsBtn} 
+                                        onClick={() => setShowDetails(false)}
+                                    >
+                                        <Maximize size={18} />
+                                        Ocultar Descripción
+                                    </button>
                                 </div>
                             </div>
                         </motion.div>
