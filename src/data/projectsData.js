@@ -1,5 +1,43 @@
 export const projectsData = [
   {
+    id: 'whatsapp-rrhh-bot',
+    title: 'Bot de RRHH con IA - Asistente WhatsApp',
+    shortDescription: 'Asistente virtual de WhatsApp con IA que automatiza el reclutamiento, la gestión de reclamos y la atención al empleado 24/7, con dashboard de control en tiempo real.',
+    tags: ['IA / LLM', 'Function Calling', 'Node.js Baileys', 'Spring Boot', 'WhatsApp API', 'PostgreSQL'],
+    censor: false,
+    thumbnail: '/projects/thumbnails/thumbnail_bot.png',
+    media: [
+      { type: 'image', url: '/projects/Bot_WhatsApp/01_Conversaciones.png' },
+      { type: 'image', url: '/projects/Bot_WhatsApp/02_Chat_IA_Reclutamiento.png' },
+      { type: 'image', url: '/projects/Bot_WhatsApp/03_Chat_Handoff_Humano.png' },
+      { type: 'image', url: '/projects/Bot_WhatsApp/04_Postulantes.png' },
+      { type: 'image', url: '/projects/Bot_WhatsApp/05_Reclamos.png' }
+    ],
+    functionalSummary: `
+      <h3>Reclutamiento y Atención al Empleado Automatizados</h3>
+      <p>Las áreas de RRHH con alto volumen de personal se saturan con tareas repetitivas: responder las mismas consultas, recibir currículums por múltiples canales y canalizar reclamos internos. Este Asistente Virtual por WhatsApp, integrado con Inteligencia Artificial, actúa como el primer punto de contacto 24/7 para candidatos y empleados.</p>
+      <ul>
+        <li><strong>Reclutamiento Automatizado:</strong> El bot entrevista de forma natural a los postulantes, recolecta sus datos clave (nombre, CUIL, experiencia, disponibilidad) y los registra automáticamente en una base centralizada lista para revisar.</li>
+        <li><strong>Gestión de Reclamos sin Fricciones:</strong> Los empleados ingresan quejas o reclamos (errores de liquidación, problemas de infraestructura) por chat. El bot clasifica la urgencia y envía alertas inmediatas a los responsables.</li>
+        <li><strong>Resolución de FAQs con IA:</strong> Un modelo de lenguaje avanzado entiende el contexto y responde al instante, reduciendo la carga de consultas básicas en más de un 80%.</li>
+        <li><strong>Escalamiento a Humanos (Hand-off):</strong> Si una situación requiere sensibilidad o el usuario lo solicita, el bot transfiere la conversación en tiempo real a un operador humano.</li>
+        <li><strong>Panel de Control Centralizado:</strong> Interfaz web moderna y responsiva desde la cual reclutadores y gerentes ven candidatos, administran reclamos, leen historiales completos y toman el control de las conversaciones.</li>
+      </ul>
+    `,
+    technicalSummary: `
+      <h3>Arquitectura de Microservicios Event-Driven con IA</h3>
+      <p>Sistema escalable compuesto por un microservicio de integración con WhatsApp y un sistema central transaccional con panel de administración SSR, todo containerizado para desacoplar responsabilidades.</p>
+      <ul>
+        <li><strong>Gateway de Mensajería:</strong> Microservicio en Node.js + Express con Baileys (WebSockets de WhatsApp) que gestiona la sesión, el QR y la autenticación, retransmitiendo los mensajes al backend vía Webhooks REST. Esto aísla la fragilidad de las sesiones de WhatsApp de la robustez transaccional del core.</li>
+        <li><strong>Core API (Spring Boot 3 / Java 21):</strong> Arquitectura en capas estricta (Controladores, Servicios, Repositorios) con Spring Data JPA y generación automática de esquemas vía Hibernate sobre PostgreSQL.</li>
+        <li><strong>Function Calling (IA):</strong> El <code>LlmService</code> orquesta la conversación mediante LLMs (compatibles GPT/Claude) usando Tool Use. Cuando la IA reúne datos suficientes, emite un tool call que el backend procesa para ejecutar operaciones CRUD, garantizando la integridad de los datos.</li>
+        <li><strong>Estado Conversacional Dinámico:</strong> Modelo de datos con <code>ConversationMode: AI | HUMAN</code> que permite interrumpir el loop del LLM en tiempo real cuando un operador toma la conversación desde el Dashboard.</li>
+        <li><strong>Frontend Liviano:</strong> Dashboard 100% mobile-first con Thymeleaf y CSS moderno (Glassmorphism), sin librerías pesadas para minimizar el bundle del cliente.</li>
+        <li><strong>Infraestructura:</strong> Docker & Docker Compose con redes aisladas y túneles cifrados (Cloudflare Zero Trust). Data Seeder vía <code>CommandLineRunner</code> para poblar entornos de QA y demo.</li>
+      </ul>
+    `
+  },
+  {
     id: 'erp-infra',
     title: 'Infraestructura Cloud & Zero Trust - ERP Central',
     shortDescription: 'Diseño y despliegue de arquitectura productiva en VPS con alta disponibilidad, protegida bajo políticas Zero Trust.',
