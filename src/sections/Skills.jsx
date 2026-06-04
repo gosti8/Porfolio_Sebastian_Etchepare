@@ -2,6 +2,22 @@ import { motion } from 'framer-motion';
 import { Code, Server, Network } from 'lucide-react';
 import styles from './Skills.module.css';
 
+// Devicon slugs for skills that have a recognizable brand logo.
+// Anything not listed renders as a clean text pill (graceful fallback).
+const ICON_MAP = {
+    'Docker': 'docker/docker-original',
+    'Cloudflare Zero Trust': 'cloudflare/cloudflare-original',
+    'Linux Administration': 'linux/linux-original',
+    'Nginx': 'nginx/nginx-original',
+    'React': 'react/react-original',
+    'Vite': 'vitejs/vitejs-original',
+    'Javascript (ES6+)': 'javascript/javascript-original',
+    'CSS Modules': 'css3/css3-original',
+};
+
+const deviconUrl = (slug) =>
+    `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}.svg`;
+
 const Skills = () => {
     const customVariants = {
         hidden: { opacity: 0, y: 20 },
@@ -62,6 +78,16 @@ const Skills = () => {
                             <div className={styles.skillList}>
                                 {cat.skills.map(skill => (
                                     <div key={skill} className={styles.skillItem}>
+                                        {ICON_MAP[skill] && (
+                                            <img
+                                                src={deviconUrl(ICON_MAP[skill])}
+                                                alt=""
+                                                aria-hidden="true"
+                                                loading="lazy"
+                                                className={styles.skillIcon}
+                                                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                                            />
+                                        )}
                                         {skill}
                                     </div>
                                 ))}

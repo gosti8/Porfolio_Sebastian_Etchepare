@@ -8,12 +8,6 @@
     text-align: center;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
 .timeline {
     display: flex;
     flex-direction: column;
@@ -75,10 +69,11 @@
 }
 
 .roleIcon {
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--primary);
+    background: rgba(79, 70, 229, 0.12);
+    color: var(--primary-light);
     padding: 0.8rem;
     border-radius: var(--radius-sm);
+    flex-shrink: 0;
 }
 
 .role {

@@ -1,11 +1,52 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 import styles from './Hero.module.css';
 import profileImg from '../assets/profile.jpg';
 
+const ROLES = [
+    'Desarrollo a Medida',
+    'Administrador de Sistemas',
+    'Arquitectura Cloud',
+    'Seguridad & Redes',
+];
+
+const RotatingRole = () => {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prev) => (prev + 1) % ROLES.length);
+        }, 2600);
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <span className={styles.rotatingWrapper}>
+            <AnimatePresence mode="wait">
+                <motion.span
+                    key={index}
+                    className="gradient-text"
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -18 }}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                >
+                    {ROLES[index]}
+                </motion.span>
+            </AnimatePresence>
+        </span>
+    );
+};
+
 const Hero = () => {
     return (
-        <section className={styles.hero}>
+        <section id="top" className={styles.hero}>
+            {/* Animated ambient background */}
+            <div className={styles.gridBg} />
+            <div className={`aurora ${styles.auroraPrimary}`} />
+            <div className={`aurora ${styles.auroraAccent}`} />
+
             <div className="container">
                 <div className={styles.grid}>
                     <motion.div
@@ -26,8 +67,7 @@ const Hero = () => {
                         </div>
 
                         <h3 className={styles.subtitle}>
-                            Desarrollo a Medida | Administrador de Sistemas <br />
-                            Arquitectura e Infraestructura Cloud
+                            Especialista en <RotatingRole />
                         </h3>
 
                         <p className={styles.description}>
@@ -56,9 +96,6 @@ const Hero = () => {
                     </motion.div>
                 </div>
             </div>
-
-            {/* Background decorations */}
-            <div className={styles.glow} />
         </section>
     );
 };

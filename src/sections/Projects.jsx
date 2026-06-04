@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ZoomIn, Play, Image as ImageIcon, ChevronLeft, ChevronRight, CheckCircle, Code, Info, Maximize } from 'lucide-react';
+import { X, ZoomIn, Play, Image as ImageIcon, ChevronLeft, ChevronRight, CheckCircle, Code, Info, Maximize, Sparkles } from 'lucide-react';
 import styles from './Projects.module.css';
 import { projectsData } from '../data/projectsData';
 
@@ -10,18 +10,21 @@ const Projects = () => {
     const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
     const [showDetails, setShowDetails] = useState(true);
 
+    // Lock body scroll while the lightbox is open
+    useEffect(() => {
+        document.body.style.overflow = selectedProject ? 'hidden' : '';
+        return () => { document.body.style.overflow = ''; };
+    }, [selectedProject]);
+
     const openModal = (project) => {
         setSelectedProject(project);
         setActiveTab('functional');
         setCurrentMediaIndex(0);
         setShowDetails(true);
-        // Prevent scrolling on body when modal is open
-        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
         setSelectedProject(null);
-        document.body.style.overflow = 'auto';
     };
 
     const nextMedia = () => {
@@ -57,7 +60,7 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`${styles.card} glass`}
+                            className={`${styles.card} ${project.featured ? styles.cardFeatured : ''} glass`}
                             layoutId={`card-${project.id}`}
                             onClick={() => openModal(project)}
                         >
@@ -68,6 +71,12 @@ const Projects = () => {
                                     className={styles.image}
                                 />
                                 {project.censor && <div className={styles.censorBar} />}
+
+                                {project.featured && (
+                                    <span className={styles.badge}>
+                                        <Sparkles size={14} /> Destacado
+                                    </span>
+                                )}
 
                                 <div className={styles.overlay}>
                                     <ZoomIn className={styles.zoomIcon} size={32} />

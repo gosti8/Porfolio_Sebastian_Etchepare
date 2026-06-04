@@ -5,6 +5,7 @@ export const projectsData = [
     shortDescription: 'Asistente virtual de WhatsApp con IA que automatiza el reclutamiento, la gestión de reclamos y la atención al empleado 24/7, con dashboard de control en tiempo real.',
     tags: ['IA / LLM', 'Function Calling', 'Node.js Baileys', 'Spring Boot', 'WhatsApp API', 'PostgreSQL'],
     censor: false,
+    featured: true,
     thumbnail: '/projects/thumbnails/thumbnail_bot.png',
     media: [
       { type: 'image', url: '/projects/Bot_WhatsApp/01_Conversaciones.png' },
@@ -43,6 +44,7 @@ export const projectsData = [
     shortDescription: 'Diseño y despliegue de arquitectura productiva en VPS con alta disponibilidad, protegida bajo políticas Zero Trust.',
     tags: ['Cloudflare Zero Trust', 'Docker Compose', 'Linux KVM', 'Crontab', 'Seguridad Redes'],
     censor: false,
+    featured: true,
     thumbnail: '/projects/thumbnails/thumbnail_erp.png',
     media: [
       { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 211620.png' },

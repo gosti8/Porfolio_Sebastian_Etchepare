@@ -64,6 +64,23 @@
     font-weight: 400;
     margin-bottom: 2rem;
     line-height: 1.4;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5ch;
+    flex-wrap: wrap;
+}
+
+/* Keeps the line height stable while the role swaps */
+.rotatingWrapper {
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    min-height: 1.4em;
+}
+
+.rotatingWrapper > span {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .description {
@@ -144,17 +161,37 @@
     transform: scale(1.03);
 }
 
-.glow {
+/* Subtle dotted grid backdrop, fading toward the edges */
+.gridBg {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, var(--primary-glow) 0%, rgba(0, 0, 0, 0) 60%);
-    opacity: 0.2;
-    z-index: 1;
+    inset: 0;
+    z-index: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
     pointer-events: none;
+}
+
+/* Floating colored glows */
+.auroraPrimary {
+    top: -10%;
+    left: -5%;
+    width: 520px;
+    height: 520px;
+    background: var(--primary-glow);
+    opacity: 0.35;
+    animation: floatGlow 14s ease-in-out infinite;
+}
+
+.auroraAccent {
+    bottom: -15%;
+    right: -5%;
+    width: 460px;
+    height: 460px;
+    background: var(--accent-glow);
+    opacity: 0.22;
+    animation: floatGlow 18s ease-in-out infinite reverse;
 }
 
 @media (max-width: 900px) {

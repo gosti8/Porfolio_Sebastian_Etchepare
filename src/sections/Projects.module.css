@@ -10,7 +10,7 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
 }
 
@@ -29,6 +29,34 @@
     border-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Featured projects span the full row as a horizontal bento card */
+.cardFeatured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    border-color: rgba(79, 70, 229, 0.35);
+    box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.1), 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cardFeatured .imageContainer {
+    height: 100%;
+    min-height: 340px;
+}
+
+.cardFeatured .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cardFeatured .title {
+    font-size: 1.6rem;
+}
+
+.cardFeatured:hover {
+    border-color: rgba(79, 70, 229, 0.6);
+}
+
 .imageContainer {
     position: relative;
     height: 250px;
@@ -37,6 +65,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* "Featured" badge */
+.badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 6;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.45);
 }
 
 .image {
@@ -471,6 +517,21 @@
 .htmlContent strong {
     color: var(--text-main);
     font-weight: 600;
+}
+
+@media (max-width: 860px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cardFeatured {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .cardFeatured .imageContainer {
+        min-height: 250px;
+    }
 }
 
 @media (max-width: 768px) {
