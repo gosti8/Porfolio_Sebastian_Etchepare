@@ -156,7 +156,7 @@ export const projectsData = [
     tags: ['Vite', 'React', 'Java Spring Boot', 'POS Multi-módulo', 'Arquitectura Robusta'],
     censor: false,
     group: 'Independientes',
-    thumbnail: '/projects/thumbnails/thumbnail_gosti.png',
+    thumbnail: '/projects/thumbnails/thumbnail_gosti.jpg',
     media: [
       { type: 'video', url: '/projects/GosTI_Market/2026-05-06 20-04-47.mp4' },
       { type: 'image', url: '/projects/GosTI_Market/Dashboard.png' },
