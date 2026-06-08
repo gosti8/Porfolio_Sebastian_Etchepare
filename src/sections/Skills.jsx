@@ -5,15 +5,15 @@ import styles from './Skills.module.css';
 // Devicon slugs for skills that have a recognizable brand logo.
 // Anything not listed renders as a clean text pill (graceful fallback).
 const ICON_MAP = {
-    '☕ Java Spring Boot': 'spring/spring-original',
-    '⚛️ React & Vite': 'react/react-original',
-    '🐘 PostgreSQL': 'postgresql/postgresql-original',
-    '🎨 Tailwind CSS': 'tailwindcss/tailwindcss-original',
-    '🐳 Docker & Docker Compose': 'docker/docker-original',
-    '🛡️ Cloudflare Zero Trust': 'cloudflare/cloudflare-original',
-    '🐧 VPS Linux (Debian 12 / Hostinger)': 'debian/debian-original',
-    '⏱️ Crontab & Bash Scripting': 'bash/bash-original',
-    '⚙️ Nginx': 'nginx/nginx-original'
+    'Java Spring Boot': 'spring/spring-original',
+    'React & Vite': 'react/react-original',
+    'PostgreSQL': 'postgresql/postgresql-original',
+    'Tailwind CSS': 'tailwindcss/tailwindcss-original',
+    'Docker & Docker Compose': 'docker/docker-original',
+    'Cloudflare Zero Trust': 'cloudflare/cloudflare-original',
+    'VPS Linux (Debian 12 / Hostinger)': 'debian/debian-original',
+    'Crontab & Bash Scripting': 'bash/bash-original',
+    'Nginx': 'nginx/nginx-original'
 };
 
 const deviconUrl = (slug) =>
@@ -33,17 +33,17 @@ const Skills = () => {
         {
             title: 'Desarrollo Full Stack & Arquitectura',
             icon: <Code size={32} />,
-            skills: ['☕ Java Spring Boot', '⚛️ React & Vite', '📱 PWA Offline-First', '🐘 PostgreSQL', '🎨 Tailwind CSS']
+            skills: ['Java Spring Boot', 'React & Vite', '📱 PWA Offline-First', 'PostgreSQL', 'Tailwind CSS']
         },
         {
             title: 'Infraestructura Cloud & DevOps',
             icon: <Server size={32} />,
-            skills: ['🐳 Docker & Docker Compose', '🛡️ Cloudflare Zero Trust', '🐧 VPS Linux (Debian 12 / Hostinger)', '⏱️ Crontab & Bash Scripting', '🌐 Gestión de Dominios y DNS']
+            skills: ['Docker & Docker Compose', 'Cloudflare Zero Trust', 'VPS Linux (Debian 12 / Hostinger)', 'Crontab & Bash Scripting', '🌐 Gestión de Dominios y DNS']
         },
         {
             title: 'Redes, Virtualización & Seguridad',
             icon: <Network size={32} />,
-            skills: ['🖥️ Proxmox & VMware vSphere', '🧱 pfSense Firewall', '🖧 Cisco CCNA', '📊 Zabbix & Grafana', '⚙️ Nginx']
+            skills: ['🖥️ Proxmox & VMware vSphere', '🧱 pfSense Firewall', '🖧 Cisco CCNA', '📊 Zabbix & Grafana', 'Nginx']
         }
     ];
 
