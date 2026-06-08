@@ -52,7 +52,7 @@ const Projects = () => {
                     className={styles.header}
                 >
                     <h2 className="section-title">Sistemas e <span className="gradient-text">Infraestructura</span></h2>
-                    <p className={styles.subtitle}>Soluciones reales y arquitectura desplegada en producción en los últimos 5 meses.</p>
+                    <p className={styles.subtitle}>Soluciones reales y arquitectura desplegada en producción.</p>
                 </motion.div>
 
                 <div className={styles.sectionGroup}>

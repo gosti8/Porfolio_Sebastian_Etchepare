@@ -80,7 +80,7 @@ export const projectsData = [
     id: 'empaques-erp',
     title: 'Sistema de Empaques y Liquidación',
     shortDescription: 'Plataforma empresarial de liquidación de sueldos y control de asistencia con capacidades Offline y escalado dinámico.',
-    tags: ['React', 'PWA Offline', 'Spring Boot', 'PostgreSQL', 'Algoritmos RRHH', 'SaaS'],
+    tags: ['React', 'PWA Offline', 'Spring Boot', 'PostgreSQL', 'Leyes Laborales', 'Cálculo de Haberes'],
     censor: false,
     group: 'Service Company',
     thumbnail: '/projects/thumbnails/thumbnail_empaques.png',
@@ -93,12 +93,12 @@ export const projectsData = [
     ],
     functionalSummary: `
       <h3>Gestión Integral de RRHH y Pagos</h3>
-      <p>Este sistema moderniza la liquidación de sueldos y control de asistencia en entornos de alta rotación (como plantas de empaque). Permite a los encargados cargar el presentismo desde sus celulares de forma remota y a la administración realizar liquidaciones precisas en un clic.</p>
+      <p>Sistema diseñado específicamente para modernizar la liquidación de sueldos y el control de asistencia en entornos de alta rotación (como plantas de empaque y campo). Cumple rigurosamente con las leyes laborales aplicables al trabajo rural.</p>
       <ul>
-        <li><strong>Capacidad Offline:</strong> Los encargados de planta pueden seguir registrando el presentismo y los movimientos de los empleados incluso si se corta internet, sincronizando luego automáticamente.</li>
-        <li><strong>Liquidación Inteligente:</strong> Cálculos automáticos de premios por producción, horas extra y ausentismos.</li>
-        <li><strong>Gestión de Turnos y Roles:</strong> Asignación de jornadas simples, dobles o fraccionadas según el rendimiento del operario.</li>
-        <li><strong>Interfaz Adaptativa:</strong> Panel gerencial para PC y vista móvil como Progressive Web App (PWA) para los encargados.</li>
+        <li><strong>Reglas de Negocio y Leyes Laborales:</strong> Contempla el cálculo automático de feriados pagos, gestión de horas extras (al 50% y 100%), y reglas configurables para las jornadas de los días sábados.</li>
+        <li><strong>Liquidación Inteligente:</strong> Permite calcular haberes bajo múltiples modalidades: jornal fijo, producción individual, producción grupal y mínimo garantizado.</li>
+        <li><strong>Sincronización Automática:</strong> Se conecta con el sistema central de Empleados para obtener la nómina activa y las categorías actualizadas, evitando la doble carga manual de personal.</li>
+        <li><strong>Capacidad Offline:</strong> Los encargados pueden registrar el presentismo y los movimientos desde sus celulares incluso sin conexión a internet en la planta, sincronizando todo al reconectarse.</li>
       </ul>
     `,
     technicalSummary: `
@@ -193,7 +193,7 @@ export const projectsData = [
     id: 'empleados-admin',
     title: 'Gestión de RRHH',
     shortDescription: 'Sistema base para la administración unificada de legajos, usuarios, roles y autenticación corporativa.',
-    tags: ['Identity', 'Roles', 'Spring Security', 'CRUD Avanzado'],
+    tags: ['Identity', 'RBAC Roles', 'Spring Security', 'PostgreSQL', 'Auditoría', 'CRUD Avanzado'],
     censor: false,
     group: 'Service Company',
     thumbnail: '/projects/thumbnails/thumbnail_empleados.png',
@@ -210,12 +210,14 @@ export const projectsData = [
       { type: 'image', url: '/projects/Empleados/Captura de pantalla 2026-05-11 204933.png' }
     ],
     functionalSummary: `
-      <h3>Directorio Corporativo Unificado</h3>
-      <p>El punto central de verdad para toda la gestión de recursos humanos de la compañía, desde donde se abren las cuentas para los demás sistemas del ecosistema.</p>
+      <h3>Expediente Digital y Gestión Centralizada</h3>
+      <p>Funciona como el centro de información principal ("única fuente de verdad") para todos los recursos humanos de la compañía, reemplazando completamente las carpetas físicas. Está especialmente optimizado para gestionar personal de campo y trabajo por temporada con alta rotación.</p>
       <ul>
-        <li><strong>Perfiles Completos:</strong> Alta de legajos con información personal, jerarquía y asignación de permisos.</li>
-        <li><strong>Onboarding Simplificado:</strong> Creación rápida de usuarios vinculados a empleados físicos.</li>
-        <li><strong>Trazabilidad:</strong> Auditoría de quién modificó qué dato dentro de la ficha de un empleado.</li>
+        <li><strong>Línea de Tiempo e Historial:</strong> Cada cambio en la vida laboral de un empleado (altas, bajas, traslados, ascensos) queda registrado cronológicamente, formando un historial completo y fácilmente auditable.</li>
+        <li><strong>Importación Masiva:</strong> Al inicio de temporada permite importar decenas o cientos de empleados a la vez desde planillas Excel, validando automáticamente los datos para evitar duplicados.</li>
+        <li><strong>Dashboards Analíticos:</strong> Ofrece gráficos interactivos con la distribución de los trabajadores por categoría, sucursal, antigüedad y barrio, permitiendo filtrar los listados con un solo clic.</li>
+        <li><strong>Notificaciones y Vencimientos:</strong> El sistema emite alertas automáticas por email y notificaciones en pantalla cuando los periodos de prueba de los empleados están próximos a caducar.</li>
+        <li><strong>Integración Inter-sistemas:</strong> Abastece de información actualizada (empleados activos y categorías) al Sistema de Empaques y otros módulos del ecosistema, asegurando que todos operen con la misma nómina.</li>
       </ul>
     `,
     technicalSummary: `
