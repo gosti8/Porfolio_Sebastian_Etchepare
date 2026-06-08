@@ -234,7 +234,7 @@ export const projectsData = [
     id: 'cosechas',
     title: 'Gestión Logística de Cosechas',
     shortDescription: 'Plataforma para trazabilidad y seguimiento en tiempo real del transporte y volumen de recolección agrícola.',
-    tags: ['Logística', 'Maps/GPS', 'Data Visualization', 'PWA Offline'],
+    tags: ['Logística', 'Gestión de Campo', 'Data Visualization', 'PWA Offline'],
     censor: false,
     group: 'Service Company',
     thumbnail: '/projects/thumbnails/thumbnail_cosechas.png',
@@ -250,19 +250,20 @@ export const projectsData = [
       { type: 'image', url: '/projects/Cosechas/Captura de pantalla 2026-04-22 232640.png' }
     ],
     functionalSummary: `
-      <h3>Trazabilidad de la Operación Agrícola</h3>
-      <p>Control exacto del flujo de recolección desde la finca hasta los centros de procesamiento. Previene pérdidas, fraudes y cuellos de botella logísticos en zonas rurales.</p>
+      <h3>Control Diario de Cosecha</h3>
+      <p>Pensado para el día a día del campo. Permite llevar un control exacto de la recolección, reemplazando el uso de papel y previniendo pérdidas de información.</p>
       <ul>
-        <li><strong>Gestión de Transportes:</strong> Asignación de vehículos y transportistas a diferentes fincas.</li>
-        <li><strong>Registro de Cargas:</strong> Digitalización de los remitos de entrega y pesaje de la mercadería, con soporte para operaciones sin cobertura.</li>
-        <li><strong>Visualización de Progreso:</strong> Gráficos que comparan el avance de la cosecha entre diferentes cuadrillas y lotes al instante.</li>
+        <li><strong>Panel Simple para Encargados:</strong> Una aplicación móvil muy fácil de usar donde los encargados de cuadrilla pueden registrar rápidamente qué quinta se trabajó, cuántas personas participaron y la cantidad de bandejas o bines recolectados.</li>
+        <li><strong>Funcionamiento Sin Internet:</strong> Diseñado específicamente para zonas rurales sin cobertura. Los encargados pueden guardar toda la información en sus celulares sin señal, y el sistema se sincroniza solo apenas recuperan la conexión.</li>
+        <li><strong>Gestión de Transportes:</strong> Registro ágil de los viajes realizados, asignando fácilmente qué vehículos y choferes trasladaron la cosecha.</li>
+        <li><strong>Control Gerencial:</strong> El sistema calcula promedios de rendimiento al instante. Los administradores acceden a tableros con gráficos comparativos claros y pueden exportar todo a Excel.</li>
       </ul>
     `,
     technicalSummary: `
       <h3>Integración y Sincronización Confiable</h3>
       <p>Un sistema resistente diseñado específicamente para ambientes rurales sin infraestructura de red estable.</p>
       <ul>
-        <li><strong>Progressive Web App (PWA):</strong> Capacidades offline-first que garantizan el funcionamiento total de la carga de datos (pesajes, choferes, cargas) en caché local cuando no hay señal.</li>
+        <li><strong>Progressive Web App (PWA):</strong> Capacidades offline-first que garantizan el funcionamiento total de la carga de datos (cuadrillas, choferes, recolección) en caché local cuando no hay señal.</li>
         <li><strong>Cola de Sincronización:</strong> Algoritmo de resolución de conflictos para enviar de manera ordenada lotes de transacciones cuando los dispositivos recuperan la conexión de red (4G/WiFi).</li>
         <li><strong>Dashboards Reactivos:</strong> Implementación de librerías avanzadas (Recharts/Chart.js) para generar inteligencia de negocio visual a gran velocidad y predecir tiempos logísticos.</li>
       </ul>

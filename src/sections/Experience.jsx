@@ -6,28 +6,28 @@ const Experience = () => {
     const experiences = [
         {
             id: 1,
-            role: 'Desarrollador Full Stack & Arquitectura',
-            company: 'Empresa Agropecuaria (ERP)',
+            role: 'Desarrollador Full-Stack & DevOps Lead',
+            company: 'Service Company (Contratista Rural)',
             period: 'Nov 2025 - Presente',
-            description: 'Lideré el desarrollo integral de un ERP para la gestión de cosechas y logística.',
+            description: 'Diseñé y desarrollé desde cero un ecosistema ERP completo para el rubro rural. Centralicé las operaciones corporativas abarcando gestión de recursos humanos, control logístico en campo y liquidación de empaques mediante microservicios y arquitectura Zero Trust.',
             achievements: [
-                'Desarrollo Frontend en React y Backend en Spring Boot.',
-                'Implementación de Cloudflare Zero Trust para seguridad "Hub & Spoke".',
-                'Despliegue conteinerizado con Docker y orquestación en VPS.',
-                'Diseño de dashboards analíticos para toma de decisiones en tiempo real.'
+                'Desarrollo Core: Creación de APIs robustas con Spring Boot y frontends reactivos, implementando PWA Offline para garantizar operatividad en zonas rurales sin señal.',
+                'Infraestructura Cloud: Despliegue productivo sobre VPS (Hostinger) con Debian 12, orquestando todos los microservicios y bases de datos a través de Docker Compose.',
+                'Seguridad Avanzada: Implementación de túneles encriptados con Cloudflare Zero Trust (Hub & Spoke), aislando puertos del servidor y protegiendo el ecosistema sin exponerlo a internet.',
+                'Automatización de Datos: Respaldos automáticos (Backups) programados con scripts Bash y Crontab.'
             ]
         },
         {
             id: 2,
-            role: 'Infraestructura y Redes',
+            role: 'Administrador de Infraestructura y Redes',
             company: 'Municipalidad de Concordia',
             period: 'Ago 2025 - Dic 2025',
-            description: 'Gestión operativa, monitoreo y modernización de la red municipal.',
+            description: 'Gestión operativa, monitoreo continuo y modernización integral del centro de datos y red municipal.',
             achievements: [
-                'Administración de virtualización con VMware y Proxmox.',
-                'Monitoreo crítico con Zabbix y visualización en Grafana/NagVis.',
-                'Implementación de NetBox como "Single Source of Truth" para documentación.',
-                'Configuración de Firewalls (pfSense) y Redes WiFi (UniFi).'
+                'Virtualización: Administración de clústeres y servidores físicos sobre entornos VMware vSphere y Proxmox.',
+                'Monitoreo Crítico: Despliegue de Zabbix y paneles en tiempo real (Grafana/NagVis) para vigilar la salud de los servidores.',
+                'Seguridad Perimetral: Configuración estricta de firewalls pfSense y despliegue de redes inalámbricas corporativas (UniFi).',
+                'Networking: Gestión de conmutación (Cisco Switching) y optimización del flujo de red.'
             ]
         }
     ];

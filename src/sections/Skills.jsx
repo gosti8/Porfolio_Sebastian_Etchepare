@@ -5,14 +5,15 @@ import styles from './Skills.module.css';
 // Devicon slugs for skills that have a recognizable brand logo.
 // Anything not listed renders as a clean text pill (graceful fallback).
 const ICON_MAP = {
-    'Docker': 'docker/docker-original',
-    'Cloudflare Zero Trust': 'cloudflare/cloudflare-original',
-    'Linux Administration': 'linux/linux-original',
-    'Nginx': 'nginx/nginx-original',
-    'React': 'react/react-original',
-    'Vite': 'vitejs/vitejs-original',
-    'Javascript (ES6+)': 'javascript/javascript-original',
-    'CSS Modules': 'css3/css3-original',
+    '☕ Java Spring Boot': 'spring/spring-original',
+    '⚛️ React & Vite': 'react/react-original',
+    '🐘 PostgreSQL': 'postgresql/postgresql-original',
+    '🎨 Tailwind CSS': 'tailwindcss/tailwindcss-original',
+    '🐳 Docker & Docker Compose': 'docker/docker-original',
+    '🛡️ Cloudflare Zero Trust': 'cloudflare/cloudflare-original',
+    '🐧 VPS Linux (Debian 12 / Hostinger)': 'debian/debian-original',
+    '⏱️ Crontab & Bash Scripting': 'bash/bash-original',
+    '⚙️ Nginx': 'nginx/nginx-original'
 };
 
 const deviconUrl = (slug) =>
@@ -30,19 +31,19 @@ const Skills = () => {
 
     const skillCategories = [
         {
-            title: 'Infraestructura & DevOps',
-            icon: <Network size={32} />,
-            skills: ['VMware vSphere', 'Proxmox', 'Docker', 'Zabbix', 'Cloudflare Zero Trust', 'PfSense', 'Cisco Switching', 'NetBox']
-        },
-        {
-            title: 'Certificaciones & Seguridad',
-            icon: <Server size={32} />,
-            skills: ['Cisco Certified Network Associate', 'Cybersecurity Strategy Certification', 'Linux Administration', 'Shell Scripting', 'Nginx']
-        },
-        {
-            title: 'Desarrollo Full Stack',
+            title: 'Desarrollo Full Stack & Arquitectura',
             icon: <Code size={32} />,
-            skills: ['React', 'Vite', 'Javascript (ES6+)', 'CSS Modules', 'Framer Motion', 'Responsive Design']
+            skills: ['☕ Java Spring Boot', '⚛️ React & Vite', '📱 PWA Offline-First', '🐘 PostgreSQL', '🎨 Tailwind CSS']
+        },
+        {
+            title: 'Infraestructura Cloud & DevOps',
+            icon: <Server size={32} />,
+            skills: ['🐳 Docker & Docker Compose', '🛡️ Cloudflare Zero Trust', '🐧 VPS Linux (Debian 12 / Hostinger)', '⏱️ Crontab & Bash Scripting', '🌐 Gestión de Dominios y DNS']
+        },
+        {
+            title: 'Redes, Virtualización & Seguridad',
+            icon: <Network size={32} />,
+            skills: ['🖥️ Proxmox & VMware vSphere', '🧱 pfSense Firewall', '🖧 Cisco CCNA', '📊 Zabbix & Grafana', '⚙️ Nginx']
         }
     ];
 
