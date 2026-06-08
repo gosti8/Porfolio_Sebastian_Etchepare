@@ -39,6 +39,9 @@ const Projects = () => {
         }
     };
 
+    const serviceCompanyProjects = projectsData.filter(p => p.group === 'Service Company');
+    const independentProjects = projectsData.filter(p => p.group === 'Independientes');
+
     return (
         <section id="projects" className={styles.projects}>
             <div className="container">
@@ -52,50 +55,90 @@ const Projects = () => {
                     <p className={styles.subtitle}>Soluciones reales y arquitectura desplegada en producción en los últimos 5 meses.</p>
                 </motion.div>
 
-                <div className={styles.grid}>
-                    {projectsData.map((project, index) => (
-                        <motion.div
-                            key={project.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className={`${styles.card} ${project.featured ? styles.cardFeatured : ''} glass`}
-                            layoutId={`card-${project.id}`}
-                            onClick={() => openModal(project)}
-                        >
-                            <div className={styles.imageContainer}>
-                                <img
-                                    src={project.thumbnail}
-                                    alt={project.title}
-                                    className={styles.image}
-                                />
-                                {project.censor && <div className={styles.censorBar} />}
+                <div className={styles.sectionGroup}>
+                    <h3 className={styles.groupTitle}>Service Company - Ecosistema ERP Rural</h3>
+                    <div className={styles.grid}>
+                        {serviceCompanyProjects.map((project, index) => (
+                            <motion.div
+                                key={project.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className={`${styles.card} glass`}
+                                layoutId={`card-${project.id}`}
+                                onClick={() => openModal(project)}
+                            >
+                                <div className={styles.imageContainer}>
+                                    <img
+                                        src={project.thumbnail}
+                                        alt={project.title}
+                                        className={styles.image}
+                                    />
+                                    {project.censor && <div className={styles.censorBar} />}
 
-                                {project.featured && (
-                                    <span className={styles.badge}>
-                                        <Sparkles size={14} /> Destacado
-                                    </span>
-                                )}
-
-                                <div className={styles.overlay}>
-                                    <ZoomIn className={styles.zoomIcon} size={32} />
-                                </div>
-                            </div>
-
-                            <div className={styles.content}>
-                                <div className={styles.tags}>
-                                    {project.tags.slice(0, 3).map(tag => (
-                                        <span key={tag} className={styles.tag}>{tag}</span>
-                                    ))}
-                                    {project.tags.length > 3 && <span className={styles.tag}>+{project.tags.length - 3}</span>}
+                                    <div className={styles.overlay}>
+                                        <ZoomIn className={styles.zoomIcon} size={32} />
+                                    </div>
                                 </div>
 
-                                <h3 className={styles.title}>{project.title}</h3>
-                                <p className={styles.description}>{project.shortDescription}</p>
-                            </div>
-                        </motion.div>
-                    ))}
+                                <div className={styles.content}>
+                                    <div className={styles.tags}>
+                                        {project.tags.slice(0, 3).map(tag => (
+                                            <span key={tag} className={styles.tag}>{tag}</span>
+                                        ))}
+                                        {project.tags.length > 3 && <span className={styles.tag}>+{project.tags.length - 3}</span>}
+                                    </div>
+
+                                    <h3 className={styles.title}>{project.title}</h3>
+                                    <p className={styles.description}>{project.shortDescription}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className={styles.sectionGroup}>
+                    <h3 className={styles.groupTitle}>Proyectos Independientes</h3>
+                    <div className={styles.grid}>
+                        {independentProjects.map((project, index) => (
+                            <motion.div
+                                key={project.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className={`${styles.card} glass`}
+                                layoutId={`card-${project.id}`}
+                                onClick={() => openModal(project)}
+                            >
+                                <div className={styles.imageContainer}>
+                                    <img
+                                        src={project.thumbnail}
+                                        alt={project.title}
+                                        className={styles.image}
+                                    />
+                                    {project.censor && <div className={styles.censorBar} />}
+
+                                    <div className={styles.overlay}>
+                                        <ZoomIn className={styles.zoomIcon} size={32} />
+                                    </div>
+                                </div>
+
+                                <div className={styles.content}>
+                                    <div className={styles.tags}>
+                                        {project.tags.slice(0, 3).map(tag => (
+                                            <span key={tag} className={styles.tag}>{tag}</span>
+                                        ))}
+                                        {project.tags.length > 3 && <span className={styles.tag}>+{project.tags.length - 3}</span>}
+                                    </div>
+
+                                    <h3 className={styles.title}>{project.title}</h3>
+                                    <p className={styles.description}>{project.shortDescription}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
 

@@ -5,7 +5,7 @@ export const projectsData = [
     shortDescription: 'Asistente virtual de WhatsApp con IA que automatiza el reclutamiento, la gestión de reclamos y la atención al empleado 24/7, con dashboard de control en tiempo real.',
     tags: ['IA / LLM', 'Function Calling', 'Node.js Baileys', 'Spring Boot', 'WhatsApp API', 'PostgreSQL'],
     censor: false,
-    featured: true,
+    group: 'Service Company',
     thumbnail: '/projects/thumbnails/thumbnail_bot.png',
     media: [
       { type: 'image', url: '/projects/Bot_WhatsApp/01_Conversaciones.png' },
@@ -44,7 +44,7 @@ export const projectsData = [
     shortDescription: 'Diseño y despliegue de arquitectura productiva en VPS con alta disponibilidad, protegida bajo políticas Zero Trust.',
     tags: ['Cloudflare Zero Trust', 'Docker Compose', 'Linux KVM', 'Crontab', 'Seguridad Redes'],
     censor: false,
-    featured: true,
+    group: 'Service Company',
     thumbnail: '/projects/thumbnails/thumbnail_erp.png',
     media: [
       { type: 'image', url: '/projects/ERP_Infraestructura/Captura de pantalla 2026-04-22 211620.png' },
@@ -78,10 +78,11 @@ export const projectsData = [
   },
   {
     id: 'empaques-erp',
-    title: 'SaaS ERP - Módulo Empaques y Liquidación',
+    title: 'Sistema de Empaques y Liquidación',
     shortDescription: 'Plataforma empresarial de liquidación de sueldos y control de asistencia con capacidades Offline y escalado dinámico.',
     tags: ['React', 'PWA Offline', 'Spring Boot', 'PostgreSQL', 'Algoritmos RRHH', 'SaaS'],
     censor: false,
+    group: 'Service Company',
     thumbnail: '/projects/thumbnails/thumbnail_empaques.png',
     media: [
       { type: 'image', url: '/projects/Empaques/Liquidaciones.png' },
@@ -118,6 +119,7 @@ export const projectsData = [
     shortDescription: 'Aplicación web full-stack para el registro de asistentes, generación de tickets QR y escaneo en tiempo real en eventos usando getUserMedia.',
     tags: ['Node.js', 'Express', 'getUserMedia API', 'SQLite', 'TailwindCSS'],
     censor: false,
+    group: 'Independientes',
     thumbnail: '/projects/thumbnails/thumbnail_qr.png',
     media: [
       { type: 'video', url: '/projects/Sistema_QR_Farer/Sistema QR Farer.mp4' },
@@ -153,6 +155,7 @@ export const projectsData = [
     shortDescription: 'Sistema integral de gran envergadura (ERP y POS) con facturación, gestión de múltiples catálogos, proveedores y finanzas cruzadas.',
     tags: ['Vite', 'React', 'Java Spring Boot', 'POS Multi-módulo', 'Arquitectura Robusta'],
     censor: false,
+    group: 'Independientes',
     thumbnail: '/projects/thumbnails/thumbnail_gosti.png',
     media: [
       { type: 'video', url: '/projects/GosTI_Market/2026-05-06 20-04-47.mp4' },
@@ -188,10 +191,11 @@ export const projectsData = [
   },
   {
     id: 'empleados-admin',
-    title: 'Módulo Core: Gestión de Empleados',
+    title: 'Gestión de RRHH',
     shortDescription: 'Sistema base para la administración unificada de legajos, usuarios, roles y autenticación corporativa.',
     tags: ['Identity', 'Roles', 'Spring Security', 'CRUD Avanzado'],
     censor: false,
+    group: 'Service Company',
     thumbnail: '/projects/thumbnails/thumbnail_empleados.png',
     media: [
       { type: 'video', url: '/projects/Empleados/Sistema Empleados.mp4' },
@@ -230,6 +234,7 @@ export const projectsData = [
     shortDescription: 'Plataforma para trazabilidad y seguimiento en tiempo real del transporte y volumen de recolección agrícola.',
     tags: ['Logística', 'Maps/GPS', 'Data Visualization', 'PWA Offline'],
     censor: false,
+    group: 'Service Company',
     thumbnail: '/projects/thumbnails/thumbnail_cosechas.png',
     media: [
       { type: 'video', url: '/projects/Cosechas/Cosechas Porfolio.mp4' },
