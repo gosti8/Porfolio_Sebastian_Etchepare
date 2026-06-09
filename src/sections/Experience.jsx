@@ -19,9 +19,9 @@ const Experience = () => {
         },
         {
             id: 2,
-            role: 'Administrador de Infraestructura y Redes',
+            role: 'Infraestructura y Redes (Práctica Profesional)',
             company: 'Municipalidad de Concordia',
-            period: 'Ago 2025 - Dic 2025',
+            period: 'Ago 2025 - Nov 2025',
             description: 'Gestión operativa, monitoreo continuo y modernización integral del centro de datos y red municipal.',
             achievements: [
                 'Virtualización: Administración de clústeres y servidores físicos sobre entornos VMware vSphere y Proxmox.',
