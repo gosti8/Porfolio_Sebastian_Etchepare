@@ -11,7 +11,7 @@ const Footer = () => {
                     ¿Listo para <span className="gradient-text">Digitalizar tu Negocio?</span>
                 </h2>
                 <p className={styles.subtitle}>
-                    Transformamos operaciones manuales en ecosistemas de software escalables.
+                    Transformo operaciones manuales en ecosistemas de software escalables.
                 </p>
 
                 <div className={styles.socials}>
