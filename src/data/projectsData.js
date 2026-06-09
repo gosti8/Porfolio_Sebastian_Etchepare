@@ -268,5 +268,36 @@ export const projectsData = [
         <li><strong>Dashboards Reactivos:</strong> Implementación de librerías avanzadas (Recharts/Chart.js) para generar inteligencia de negocio visual a gran velocidad y predecir tiempos logísticos.</li>
       </ul>
     `
+  },
+  {
+    id: 'portfolio-web',
+    title: 'Portfolio Interactivo & Motor de Presentación',
+    shortDescription: 'Aplicación web construida desde cero para exhibir proyectos de ingeniería y arquitectura con un diseño moderno y responsive.',
+    tags: ['React', 'Vite', 'Framer Motion', 'CSS Modules', 'UI/UX'],
+    censor: false,
+    group: 'Independientes',
+    thumbnail: '/projects/thumbnails/thumbnail_portfolio.png',
+    media: [
+      { type: 'image', url: '/projects/thumbnails/thumbnail_portfolio.png' }
+    ],
+    functionalSummary: `
+      <h3>Identidad Digital y Showcase Tecnológico</h3>
+      <p>Este mismo sitio web. Construido de forma completamente personalizada sin depender de plantillas prediseñadas (como WordPress o Wix), demostrando dominio sobre el frontend moderno.</p>
+      <ul>
+        <li><strong>Navegación Fluida:</strong> Diseño enfocado en la experiencia de usuario (UX) con transiciones suaves y carga instantánea.</li>
+        <li><strong>Arquitectura de Datos:</strong> El contenido de los proyectos está separado de la interfaz, lo que permite agregar nuevos casos de estudio simplemente modificando un archivo de configuración.</li>
+        <li><strong>Visualización Atractiva:</strong> Galería multimedia integrada (Lightbox) que permite a los reclutadores inspeccionar capturas de pantalla y videos sin salir de la página.</li>
+      </ul>
+    `,
+    technicalSummary: `
+      <h3>Frontend Optimizado y Modular</h3>
+      <p>Desarrollado con las mejores prácticas de React moderno para garantizar alto rendimiento y mantenibilidad.</p>
+      <ul>
+        <li><strong>React & Vite:</strong> Stack de desarrollo ultrarrápido que genera un bundle (empaquetado) mínimo para asegurar tiempos de carga casi nulos.</li>
+        <li><strong>Animaciones Declarativas:</strong> Uso de Framer Motion para orquestar animaciones basadas en scroll, inyectando dinamismo a la interfaz de forma declarativa.</li>
+        <li><strong>Estilos Aislados:</strong> Implementación de CSS Modules con variables nativas para mantener un sistema de diseño consistente sin colisiones de clases a nivel global.</li>
+        <li><strong>Despliegue Ágil:</strong> Preparado para ser desplegado en plataformas de borde (Edge) garantizando distribución global mediante CDN.</li>
+      </ul>
+    `
   }
 ];
