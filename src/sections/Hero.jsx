@@ -72,7 +72,7 @@ const Hero = () => {
                         </h3>
 
                         <p className={styles.description}>
-                            Como Consultor Tecnológico, diseño y construyo ecosistemas de software a medida para digitalizar y potenciar operaciones corporativas. Apalanco mi trabajo en herramientas de <strong>Desarrollo Acelerado con IA</strong> (AI-Augmented Engineering) para entregar plataformas hiper-seguras e infraestructura Cloud en tiempos récord, con sólida experiencia en el sector logístico y agropecuario.
+                            Como Consultor Tecnológico, diseño y construyo ecosistemas de software a medida para digitalizar y potenciar operaciones corporativas. Integro herramientas de <strong>Desarrollo Acelerado con IA</strong> (AI-Augmented Engineering) para entregar plataformas seguras y arquitecturas Cloud eficientes, con sólida experiencia en el sector logístico y agropecuario.
                         </p>
 
                         <div className={styles.actions}>
