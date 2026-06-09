@@ -33,7 +33,7 @@ const Skills = () => {
         {
             title: 'Desarrollo Full Stack & Arquitectura',
             icon: <Code size={32} />,
-            skills: ['Java Spring Boot', 'React & Vite', '📱 PWA Offline-First', 'PostgreSQL', 'Tailwind CSS']
+            skills: ['Java Spring Boot', 'React & Vite', '📱 PWA Offline-First', 'PostgreSQL', 'Tailwind CSS', '🤖 AI-Augmented Engineering (Antigravity & Claude)']
         },
         {
             title: 'Infraestructura Cloud & DevOps',

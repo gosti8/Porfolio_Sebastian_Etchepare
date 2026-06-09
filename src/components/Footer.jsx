@@ -1,17 +1,17 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
 import styles from './Footer.module.css';
 
-const EMAIL = 'sebastian.etchepare8@hotmail.com';
+const EMAIL = 'sebastianetchepare8@gmail.com';
 
 const Footer = () => {
     return (
         <footer id="contact" className={styles.footer}>
             <div className="container">
                 <h2 className={styles.heading}>
-                    ¿Listo para <span className="gradient-text">Transformar Ideas?</span>
+                    ¿Listo para <span className="gradient-text">Digitalizar tu Negocio?</span>
                 </h2>
                 <p className={styles.subtitle}>
-                    Actualmente abierto a nuevas oportunidades laborales.
+                    Transformamos operaciones manuales en ecosistemas de software escalables.
                 </p>
 
                 <div className={styles.socials}>
@@ -39,10 +39,10 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.card}>
-                    <h3 className={styles.cardTitle}>Oferta de Servicios</h3>
+                    <h3 className={styles.cardTitle}>Servicios de Consultoría</h3>
                     <p className={styles.cardText}>
-                        Experiencia sólida en <strong>Configuración de Switches Cisco</strong>, Redes y Ciberseguridad.<br />
-                        Disponible para proyectos freelance, consultoría DevOps o contratación Full Time.
+                        Especialista en <strong>Desarrollo a Medida, Arquitectura Cloud y Seguridad Zero Trust</strong>.<br />
+                        Disponible para automatización de procesos empresariales y proyectos integrales con IA.
                         <br /><br />
                         📩 <a href={`mailto:${EMAIL}`} className={styles.email}>{EMAIL}</a>
                     </p>

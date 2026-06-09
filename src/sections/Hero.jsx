@@ -5,8 +5,9 @@ import styles from './Hero.module.css';
 import profileImg from '../assets/profile.jpg';
 
 const ROLES = [
-    'Desarrollo a Medida',
-    'Administrador de Sistemas',
+    'Soluciones a Medida',
+    'Transformación Digital',
+    'AI-Augmented Engineering',
     'Arquitectura Cloud',
     'Seguridad & Redes',
 ];
@@ -71,7 +72,7 @@ const Hero = () => {
                         </h3>
 
                         <p className={styles.description}>
-                            Como Licenciado en Sistemas, construyo soluciones de software personalizadas desde cero y administro la infraestructura de servidores y redes para garantizar que tu negocio escale de forma segura y eficiente.
+                            Como Consultor Tecnológico, diseño y construyo ecosistemas de software a medida para digitalizar y potenciar operaciones corporativas. Apalanco mi trabajo en herramientas de <strong>Desarrollo Acelerado con IA</strong> (AI-Augmented Engineering) para entregar plataformas hiper-seguras e infraestructura Cloud en tiempos récord, con sólida experiencia en el sector logístico y agropecuario.
                         </p>
 
                         <div className={styles.actions}>
