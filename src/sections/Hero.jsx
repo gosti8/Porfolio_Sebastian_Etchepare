@@ -9,7 +9,7 @@ const ROLES = [
     'Transformación Digital',
     'AI-Augmented Engineering',
     'Arquitectura Cloud',
-    'Seguridad & Redes',
+    'Infraestructura & DevOps',
 ];
 
 const RotatingRole = () => {
