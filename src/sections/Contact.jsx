@@ -78,7 +78,6 @@ const Contact = () => {
                             <select id="service" name="service" required defaultValue="">
                                 <option value="" disabled>Selecciona una opción...</option>
                                 <option value="Desarrollo Web">Desarrollo Web</option>
-                                <option value="Desarrollo Móvil">Desarrollo Móvil</option>
                                 <option value="Consultoría / Asesoría">Consultoría / Asesoría</option>
                                 <option value="Oportunidad Laboral">Oportunidad Laboral</option>
                                 <option value="Otro">Otro / General</option>
