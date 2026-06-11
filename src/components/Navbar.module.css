@@ -19,6 +19,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1001; /* Keeps the toggle button above the fullscreen menu */
 }
 
 .logo {
@@ -29,8 +31,10 @@
     transition: opacity 0.2s;
 }
 
-.logo:hover {
-    opacity: 0.85;
+@media (hover: hover) {
+    .logo:hover {
+        opacity: 0.85;
+    }
 }
 
 .desktopMenu {
@@ -46,8 +50,10 @@
     transition: color 0.2s;
 }
 
-.navLink:hover {
-    color: var(--text-main);
+@media (hover: hover) {
+    .navLink:hover {
+        color: var(--text-main);
+    }
 }
 
 /* Animated underline for the active section */
@@ -79,6 +85,8 @@
     border: none;
     color: var(--text-main);
     cursor: pointer;
+    padding: 0.5rem; /* Increase touch target area */
+    margin: -0.5rem; /* Offset the padding so it visually stays in place */
 }
 
 /* Mobile styles (Fullscreen Menu) */
@@ -119,9 +127,11 @@
     animation: slideUp 0.4s ease-out forwards;
 }
 
-.mobileLink:hover {
-    color: var(--text-main);
-    transform: scale(1.1);
+@media (hover: hover) {
+    .mobileLink:hover {
+        color: var(--text-main);
+        transform: scale(1.1);
+    }
 }
 
 .mobileLink.active {

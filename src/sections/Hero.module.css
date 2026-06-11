@@ -1,5 +1,5 @@
 .hero {
-    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic Viewport Height for mobile */
     display: flex;
     align-items: center;
     position: relative;
@@ -107,9 +107,11 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.primaryBtn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px var(--primary-glow);
+@media (hover: hover) {
+    .primaryBtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px var(--primary-glow);
+    }
 }
 
 .secondaryBtn {
@@ -125,8 +127,10 @@
     transition: background 0.2s;
 }
 
-.secondaryBtn:hover {
-    background: rgba(255, 255, 255, 0.05);
+@media (hover: hover) {
+    .secondaryBtn:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
 }
 
 /* Image Profile Styles */
@@ -157,8 +161,10 @@
     transition: transform 0.5s ease;
 }
 
-.profileFrame:hover .profileImage {
-    transform: scale(1.03);
+@media (hover: hover) {
+    .profileFrame:hover .profileImage {
+        transform: scale(1.03);
+    }
 }
 
 /* Subtle dotted grid backdrop, fading toward the edges */
