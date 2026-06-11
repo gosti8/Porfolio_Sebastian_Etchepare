@@ -74,12 +74,13 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {isOpen && (
                 <div className={styles.mobileMenu}>
-                    {navLinks.map((link) => (
+                    {navLinks.map((link, index) => (
                         <a
                             key={link.name}
                             href={link.href}
                             className={`${styles.mobileLink} ${activeId === link.href.slice(1) ? styles.active : ''}`}
                             onClick={() => setIsOpen(false)}
+                            style={{ animationDelay: `${index * 0.1 + 0.1}s` }}
                         >
                             {link.name}
                         </a>
