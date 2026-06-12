@@ -1,16 +1,22 @@
-# React + Vite
+# Sebastián Etchepare - Portfolio Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene el código fuente de mi portafolio profesional, donde exhibo mis proyectos, experiencia y habilidades técnicas como Desarrollador Full-Stack y DevOps.
 
-Currently, two official plugins are available:
+🌐 **Sitio Web en Vivo:** [sebastianetchepare.com](https://sebastianetchepare.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologías Utilizadas
 
-## React Compiler
+Este proyecto fue desarrollado desde cero sin utilizar plantillas (templates) pre-armadas, aplicando las siguientes tecnologías:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React.js + Vite
+- **Estilos:** CSS Modules y variables CSS puras (Glassmorphism & Diseño Fluido).
+- **Animaciones:** Framer Motion (Animaciones basadas en scroll, gestos).
+- **Íconos:** Lucide React & Devicons.
+- **Integraciones:** Web3Forms (Formulario de contacto).
+- **Despliegue:** Vercel.
 
-## Expanding the ESLint configuration
+## ⚖️ Licencia
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**© 2026 Sebastián Etchepare. Todos los derechos reservados.**
+
+El código fuente de este portafolio se encuentra público exclusivamente con fines de demostración técnica (showcase). Siéntete libre de explorar el repositorio para auditar el código o inspirarte, pero por favor ten en cuenta que el diseño, las imágenes y los componentes no son de libre distribución ni están pensados para ser clonados como plantillas.
