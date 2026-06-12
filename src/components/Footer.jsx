@@ -16,7 +16,7 @@ const Footer = () => {
 
                 <div className={styles.socials}>
                     <a
-                        href="https://www.linkedin.com/in/sebasti%C3%A1n-daniel-etchepare-546409286/"
+                        href="https://www.linkedin.com/in/sebastianetchepare/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
